@@ -1,0 +1,34 @@
+{
+  "id": "read-aloud-audio-style-001",
+  "title": "Author narration & pronunciation style guide v1",
+  "project": "read-aloud-audio",
+  "type": "writing",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["literacy", "accessibility", "open-culture", "audio"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "Openly-licensed and public-domain texts (Project Gutenberg, Standard Ebooks, Wikisource, OpenStax, open children's books) mostly exist as text only, with no clear, text-aligned narration. Listening-while-reading with synchronized word/sentence highlighting is one of the best-evidenced supports for emergent, struggling, print-disabled, and language-learning readers. Before any work is narrated at scale across many parallel donated sessions, the project needs a single versioned style guide so narration is consistent, clear, faithful to the source, and tuned for literacy practice rather than dramatized performance.",
+  "objective": "Write and publish version 1 of the narration & pronunciation style guide that all narrate/batch tasks will follow.",
+  "acceptanceCriteria": [
+    "Defines diction, pacing, and prosody tuned for literacy practice (clear, unhurried, natural; not dramatized) and how to handle dialogue, verse/line breaks, and headings.",
+    "Specifies the pronunciation-lexicon convention (IPA and/or respelling) and which item classes must be flagged for pronunciation review (proper nouns, foreign/archaic words, technical terms).",
+    "States the text-audio fidelity rule: read the text as published with no skipping, adding, substituting, abridging, or modernizing.",
+    "Includes a content-suitability section: curated age-appropriateness, a neutral provenance/context note for dated content (not silent editing), and a non-partisan stance for civic texts.",
+    "Is published, versioned, and licensed CC-BY-4.0."
+  ],
+  "resources": [
+    "C:\\code\\elyos\\planning\\projects\\read-aloud-audio\\PLAN.md",
+    "C:\\code\\elyos\\governance\\proposals\\read-aloud-audio.md",
+    "EPUB 3 Media Overlays (SMIL) specification",
+    "W3C WebVTT specification",
+    "DAISY / accessible-publishing read-along guidance"
+  ],
+  "output": "A versioned style-guide document (style-guide/narration-pronunciation-style-guide.md), CC-BY-4.0, covering diction/pacing/prosody for literacy, dialogue/verse/heading handling, the pronunciation-lexicon convention and flagging rules, the text-audio fidelity rule, and content-suitability guidance.",
+  "requestor": "jdev1977",
+  "verifiedNeed": true,
+  "outputLicense": "CC-BY-4.0"
+}
