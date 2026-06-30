@@ -1,0 +1,39 @@
+{
+  "id": "read-aloud-audio-narrate-001",
+  "title": "Hand-produce cold-start read-along (1–3 chapters, hard paths covered)",
+  "project": "read-aloud-audio",
+  "type": "data",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["literacy", "accessibility", "open-culture", "audio"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "dataset",
+  "tokenEstimate": "large",
+  "status": "open",
+  "context": "M0 requires one end-to-end, manually-produced read-along that exercises the hard paths before anything scales. The unit must prove that a chapter can travel from a verified openly-licensed source through narrator consent, pronunciation review, audio mastering, forced alignment, and EPUB packaging to a submission-ready artifact. The cold-start unit must include proper nouns and/or foreign/archaic words (pronunciation lexicon + review gate), structure beyond flat prose (a heading and either dialogue or verse), and — if the synthetic path is in M0 scope — one short synthetic segment exercising labeling and provenance. A trivially-easy paragraph is explicitly excluded. Blocked on research-001 (channel gate), style-001, spec-001, data-001, data-002, and research-002.",
+  "objective": "Manually produce 1–3 chapters of a verified PD or openly-licensed work as a complete, submission-ready read-along: narrated audio + EPUB 3 Media Overlays (SMIL) + WebVTT + JSON alignment + open audio (FLAC master, Opus, MP3), with full rights verification, speaker consent, pronunciation review, audio QA, and human/synthetic label.",
+  "acceptanceCriteria": [
+    "Source text rights are verified per target jurisdiction (PD or CC) before any narration; edition, attribution, evidence URL, and retrieval date are recorded in the per-work record.",
+    "A signed speaker-consent/provenance record exists for every voice used; human segments are labeled human-narrated and any synthetic segment is labeled AI-synthesized with full synthetic-provenance record.",
+    "The unit includes ≥1 passage with proper nouns and/or foreign or archaic words; a pronunciation lexicon entry with IPA or respelling exists for each flagged item, reviewed and cleared by a skilled reviewer.",
+    "The unit includes structure beyond flat prose (≥1 heading and ≥1 dialogue or verse passage).",
+    "Audio meets the audio-quality spec: integrated loudness within target LUFS, true-peak ≤ -1 dBTP, noise floor within threshold, no clipping; lossless FLAC master retained; Opus and MP3 derived.",
+    "Forced alignment produces EPUB 3 Media Overlays (SMIL), WebVTT, and JSON at word or sentence granularity; 0 text-audio fidelity defects (no skipped, added, or substituted words vs. source); all flagged pronunciation items cleared; alignment within tolerance after human review.",
+    "A human alignment-accuracy reference set is established from this unit (hand-checked segment boundaries) to serve as ground truth for pipeline measurement."
+  ],
+  "resources": [
+    "read-aloud-audio-style-001 (narration & pronunciation style guide)",
+    "read-aloud-audio-spec-001 (audio-quality spec)",
+    "read-aloud-audio-data-001 (per-work record format)",
+    "read-aloud-audio-data-002 (consent/provenance record format)",
+    "read-aloud-audio-research-002 (per-jurisdiction rights reference)",
+    "PLAN.md (pipeline steps, M0 work-selection criteria)",
+    "EPUB 3 Media Overlays (SMIL) specification",
+    "Forced-alignment tools: aeneas, Montreal Forced Aligner, WhisperX"
+  ],
+  "output": "A submission-ready read-along package for 1–3 chapters: FLAC master audio, Opus and MP3 derivatives, EPUB 3 with Media Overlays (SMIL), WebVTT cue file, JSON alignment sidecar, per-work record (with rights + consent reference + label + provenance), pronunciation lexicon, and alignment-accuracy reference set with median onset error recorded.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

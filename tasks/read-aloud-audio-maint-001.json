@@ -1,0 +1,33 @@
+{
+  "id": "read-aloud-audio-maint-001",
+  "title": "Adapter/aligner maintenance vs host API + standards changes",
+  "project": "read-aloud-audio",
+  "type": "maintenance",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["literacy", "accessibility", "open-culture", "audio", "infrastructure"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "After delivery, the forced-alignment adapter, audio-mastering adapter, and publish adapters must be kept current with upstream aligner updates, ffmpeg API changes, host API or policy changes, and standards evolution (EPUB 3 Media Overlays, WebVTT). Without ongoing maintenance, the pipeline degrades silently. This is an ongoing post-delivery maintenance task that becomes active after M1 adapters are live.",
+  "objective": "Keep the adapters and pipeline current with upstream changes to the forced aligner, audio tooling (ffmpeg), distribution channel APIs, and EPUB/WebVTT standards; record and resolve breaking changes promptly.",
+  "acceptanceCriteria": [
+    "Any breaking change in the forced aligner, ffmpeg loudness API, or distribution-channel API is detected, documented, and resolved within a reasonable maintenance window.",
+    "All adapter tests pass after each maintenance update; pnpm build, pnpm test, and pnpm lint are clean.",
+    "The per-work record schema (data-001) and consent record format (data-002) are kept compatible with any schema changes.",
+    "EPUB 3 Media Overlays and WebVTT output continues to conform to current standards after updates.",
+    "DCO sign-off on all maintenance commits."
+  ],
+  "resources": [
+    "read-aloud-audio-adapter-001 (alignment adapter)",
+    "read-aloud-audio-adapter-002 (audio-mastering adapter)",
+    "read-aloud-audio-adapter-003 (publish adapter)",
+    "PLAN.md (sustainability & maintenance section, adapter/aligner maintenance risk)"
+  ],
+  "output": "A series of maintenance PRs (one per maintenance cycle or breaking-change event) keeping adapters, pipeline, and output formats current; each PR includes a change log entry describing the upstream change and the fix applied.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

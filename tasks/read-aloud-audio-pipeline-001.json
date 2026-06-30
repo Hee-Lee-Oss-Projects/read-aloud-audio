@@ -1,0 +1,35 @@
+{
+  "id": "read-aloud-audio-pipeline-001",
+  "title": "Per-jurisdiction rights-verification + consent-record gate",
+  "project": "read-aloud-audio",
+  "type": "code",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["literacy", "accessibility", "open-culture", "audio", "rights", "infrastructure"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "The per-jurisdiction rights gate and the speaker-consent gate are hard blocking prerequisites before any narration begins or any audio is published. Without automated enforcement, individual donated sessions could inadvertently narrate copyrighted text or publish unconsented audio at scale. The gate must be in the pipeline before batch-001 begins. It must emit an auditable decision log with no secrets and no raw PII. Depends on data-001 (per-work record format), data-002 (consent record format), and research-002 (per-jurisdiction rights reference).",
+  "objective": "Implement the rights-verification and consent-record gate in pipeline/ that blocks narration and publication of any work that fails the per-jurisdiction PD/license check or lacks a valid signed consent/provenance record, and emits an auditable decision log.",
+  "acceptanceCriteria": [
+    "Rejects any source text whose rights are not verifiably PD (confirmed per target jurisdiction) or a clearly open license; 'unknown / PD-US-only without scoping / ambiguous / all-rights-reserved' all map to rejected with a specific reason in the log.",
+    "Enforces the translation/introduction rule: a work with a copyrighted modern translation or introduction is excluded unless the PD-edition text is used without the copyrighted elements.",
+    "Blocks narration and publication unless a valid signed consent record (for human narration) or a complete synthetic-provenance record (for synthetic narration) is linked via speakerRef in the per-work record.",
+    "Records rights verification details (license id, jurisdiction(s) verified, evidence URL, retrieval date, attribution) and the consent reference in the per-work record.",
+    "Emits an auditable decision log per work: pass/fail, reason, timestamp, reviewer — with no secrets, no raw PII, and no bearer tokens in the log.",
+    "Passes pnpm build and pnpm test (unit tests covering: rejection of ambiguous PD, rejection of missing consent, pass for valid PD+consent, log structure); pnpm lint clean.",
+    "Licensed MIT; DCO sign-off on all commits."
+  ],
+  "resources": [
+    "read-aloud-audio-data-001 (per-work record schema and rights-verification format)",
+    "read-aloud-audio-data-002 (consent/provenance record format)",
+    "read-aloud-audio-research-002 (per-jurisdiction rights reference and rights-lookup table)",
+    "PLAN.md (hard source-rights gate, voice/speaker rights & consent gate, pipeline steps)"
+  ],
+  "output": "A merged PR adding pipeline/rights-consent-gate/ with the rights-verification and consent-record gate implementation, unit tests, and documentation covering the gate logic, decision log format, and integration points with the per-work record.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

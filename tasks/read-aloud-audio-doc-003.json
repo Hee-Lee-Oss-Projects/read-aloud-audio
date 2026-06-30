@@ -1,0 +1,34 @@
+{
+  "id": "read-aloud-audio-doc-003",
+  "title": "Narrator onboarding + consent-process handbook",
+  "project": "read-aloud-audio",
+  "type": "writing",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["literacy", "accessibility", "open-culture", "audio"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "At scale, the narration coordinator recruits and manages many volunteer narrators. Without a self-service onboarding handbook, the coordinator must walk each narrator through the consent process manually, and the risk of consent records being incomplete or misunderstood rises. The handbook must cover what narrators are agreeing to, how to record and submit consent, the right to withdraw, and the basic recording setup that meets the audio-quality spec — making narrator onboarding safe, consistent, and scalable.",
+  "objective": "Write and publish a narrator onboarding and consent-process handbook for volunteer narrators covering the project's consent requirements, recording setup guidance, and the right-to-withdraw process.",
+  "acceptanceCriteria": [
+    "Explains clearly what the narrator is consenting to: recording, redistribution under the named open license, AI-processing-for-alignment-and-QA-only (not training or cloning), and the right to withdraw.",
+    "Explains what the narrator is explicitly NOT consenting to: use of their recordings to train or clone voice models.",
+    "Provides step-by-step instructions for completing and submitting the speaker-consent record (per data-002).",
+    "Provides basic home-recording setup guidance to help narrators meet the audio-quality spec (microphone distance, quiet room, monitoring for clipping) without requiring professional equipment.",
+    "Explains the right-to-withdraw and takedown process: how to request withdrawal, what happens to published audio, and the documentation the narrator will receive.",
+    "Is published, versioned, and licensed CC-BY-4.0."
+  ],
+  "resources": [
+    "read-aloud-audio-data-002 (consent and voice-provenance record format)",
+    "read-aloud-audio-spec-001 (audio-quality spec, for recording guidance)",
+    "read-aloud-audio-style-001 (narration style guide, for narrator preparation)",
+    "PLAN.md (narration coordinator role, voice/speaker rights & consent gate, privacy / PII stance)"
+  ],
+  "output": "A versioned narrator onboarding and consent handbook (docs/narrator-onboarding.md), CC-BY-4.0, covering consent scope and exclusions, consent-record submission steps, recording setup guidance, and the withdrawal and takedown process.",
+  "requestor": "jdev1977",
+  "verifiedNeed": true,
+  "outputLicense": "CC-BY-4.0"
+}

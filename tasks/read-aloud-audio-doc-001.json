@@ -1,0 +1,32 @@
+{
+  "id": "read-aloud-audio-doc-001",
+  "title": "Reviewer workflow + 4-axis QA rubric (fidelity/pronunciation/audio/alignment) + error taxonomy",
+  "project": "read-aloud-audio",
+  "type": "writing",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["literacy", "accessibility", "open-culture", "audio"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "Human QA is non-optional: no read-along publishes without a human checking text-audio fidelity, pronunciation, audio quality, and alignment. Without a written workflow and rubric, reviewer judgements will be inconsistent and error taxonomy will be undefined, making it impossible to track failure classes or tune the pipeline and style guide over time. The reviewer workflow must be ready before batch-001 begins so that ≥2 reviewers (including ≥1 with pronunciation/language skill) can be onboarded. Depends on style-001 (style guide) and spec-001 (audio-quality spec).",
+  "objective": "Write and publish the reviewer workflow and 4-axis QA rubric covering fidelity, pronunciation, audio quality, and alignment review, with a structured error taxonomy, so that reviewers can be onboarded and quality is measured consistently.",
+  "acceptanceCriteria": [
+    "Documents the full reviewer workflow: how to receive a chapter for review, step-by-step QA checklist for each of the 4 axes, how to record defects, and how to approve or reject.",
+    "Defines the 4-axis QA rubric with explicit pass/fail criteria: (1) text-audio fidelity (every source word present, none added/substituted/skipped — 0 defects to pass), (2) pronunciation (flagged lexicon items cleared; foreign-language items cleared by a skilled reviewer), (3) audio quality (LUFS target, true-peak ceiling, noise floor, no clipping — per spec-001), (4) alignment accuracy (highlight tracks voice within tolerance; no cumulative drift).",
+    "Defines a structured error taxonomy with named failure classes for each axis (e.g. fidelity: skipped-word, added-word, substituted-word; pronunciation: mispronounced-proper-noun, mispronounced-foreign; audio: clipping, level-too-low, noise-floor-exceeded; alignment: drift, missing-segment).",
+    "States which reviewer skills are required per review type: standard prose requires general QA skills; foreign-language passages require a reviewer with the relevant language skill (medium risk tier).",
+    "Is published, versioned, and licensed CC-BY-4.0."
+  ],
+  "resources": [
+    "read-aloud-audio-style-001 (narration & pronunciation style guide)",
+    "read-aloud-audio-spec-001 (audio-quality spec)",
+    "PLAN.md (human QA step, quality review & risk gates section)"
+  ],
+  "output": "A versioned reviewer-workflow and QA-rubric document (docs/reviewer-workflow.md), CC-BY-4.0, covering the end-to-end review workflow, the 4-axis rubric with pass/fail criteria, the error taxonomy, and the reviewer-skill requirements per axis.",
+  "requestor": "jdev1977",
+  "verifiedNeed": true,
+  "outputLicense": "CC-BY-4.0"
+}

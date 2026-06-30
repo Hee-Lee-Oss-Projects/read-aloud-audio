@@ -1,0 +1,33 @@
+{
+  "id": "read-aloud-audio-pr-001",
+  "title": "Publish cold-start read-along upstream + measure alignment baseline",
+  "project": "read-aloud-audio",
+  "type": "maintenance",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["literacy", "accessibility", "open-culture", "audio"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "A read-along is 'done' only when published, live, and playable for learners — not when files are rendered. After narrate-001 produces the submission-ready package, this task uses the publish adapter (or a manual submission to the confirmed channel) to deposit the cold-start unit upstream, confirm it is live and accessible, measure and record the alignment baseline, and establish what currently exists vs. what is missing in the target collection for future deltas. Blocked on research-001 (channel gate) and narrate-001.",
+  "objective": "Submit the cold-start read-along package to the confirmed distribution channel, confirm it is published and playable, record the alignment-accuracy baseline, and document the channel/collection baseline (what exists vs. missing).",
+  "acceptanceCriteria": [
+    "The read-along is published upstream, live, and playable at the confirmed channel, with license + attribution + speaker-consent reference + provenance and the human/synthetic label present.",
+    "The submission is additive: it does not overwrite a pre-existing better version of the same work at the host.",
+    "The alignment-accuracy reference set from narrate-001 is used to measure and record the cold-start unit's median word/sentence onset error.",
+    "A channel/collection baseline document is produced recording what read-alongs currently exist at the channel for the target work vs. what chapters are missing, for use by batch-001.",
+    "The per-work record's publishStatus is updated to 'published' with the upstream reference (PR, deposit id, or URL) recorded.",
+    "Zero rights, consent, or labeling violations confirmed at publish time."
+  ],
+  "resources": [
+    "read-aloud-audio-research-001 (confirmed channel, required output format and license)",
+    "read-aloud-audio-narrate-001 (submission-ready package and alignment reference set)",
+    "PLAN.md (publish upstream step, definition of shipped)"
+  ],
+  "output": "Published read-along at the confirmed upstream channel (live URL / PR / deposit reference), updated per-work record with publishStatus and upstreamRef, alignment-baseline record (median onset error for the cold-start unit), and a collection-baseline document listing existing vs. missing chapters.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

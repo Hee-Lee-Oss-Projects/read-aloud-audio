@@ -1,0 +1,34 @@
+{
+  "id": "read-aloud-audio-data-001",
+  "title": "Define per-work record + per-jurisdiction rights-verification format",
+  "project": "read-aloud-audio",
+  "type": "data",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["literacy", "accessibility", "open-culture", "audio", "rights"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "dataset",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "Every narrated work requires a structured per-work record capturing source provenance, rights verification, attribution, consent references, audio metadata, alignment metadata, and publication status. Without a stable, versioned record format, the pipeline cannot enforce the hard rights gate (per-jurisdiction PD or open license), emit auditable decision logs, or track a deed from narration to published-live status. This format is a prerequisite for all pipeline and narration tasks.",
+  "objective": "Define and publish v1 of the per-work narration record schema and the per-jurisdiction rights-verification record format that all pipeline and narration tasks will populate.",
+  "acceptanceCriteria": [
+    "Per-work record captures: workId, chapterId, sourceUrl, sourceCollection, edition, author (+ translator if any), rights object (status, license, jurisdictionsVerified[], evidenceUrl), attribution string, narrationType (human | synthetic), speakerRef (reference only, no raw PII), audio metadata (master/opus/mp3 paths, durationSec, LUFS, truePeakDb, noiseFloorDb), pronunciationLexicon entries, alignment metadata (smilPath, vttPath, jsonPath, medianOnsetErrMs, segmentsCorrected), qaStatus, qaScores (fidelity, pronunciation, audioQuality, alignment), upstreamRef, publishStatus, label (human-narrated | AI-synthesized), and provenance.",
+    "Rights-verification sub-record requires: PD status confirmed per jurisdiction (not assumed globally), license id, evidence URL, retrieval date, and attribution — with 'unknown / PD-US-only without scoping / ambiguous / all-rights-reserved' all mapping to 'excluded'.",
+    "Translations and introductions are flagged as needing separate rights checks in the schema.",
+    "Schema is published as a versioned JSON Schema (or equivalent) with a worked example for a PD work and a CC-BY work.",
+    "No raw PII or speaker identity is stored in public record fields; speakerRef is a reference to the separately-stored consent record.",
+    "Licensed CC0-1.0 (public-domain schema for maximum reuse)."
+  ],
+  "resources": [
+    "PLAN.md (per-work narration record data model, data / licensing / compliance sections)",
+    "TASKS.md (field mapping and verifiedNeed guidance)",
+    "EPUB 3 Media Overlays specification (SMIL timing fields)",
+    "Creative Commons license metadata conventions"
+  ],
+  "output": "A versioned per-work record schema file (schema/work-record.schema.json or equivalent) and a companion rights-verification format document, CC0-1.0, with worked examples for at least one PD and one CC-BY source.",
+  "requestor": "jdev1977",
+  "verifiedNeed": true,
+  "outputLicense": "CC0-1.0"
+}

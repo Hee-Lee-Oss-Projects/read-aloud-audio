@@ -1,0 +1,35 @@
+{
+  "id": "read-aloud-audio-i18n-001",
+  "title": "Multilingual read-alongs (sibling-project assessment)",
+  "project": "read-aloud-audio",
+  "type": "research",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["literacy", "accessibility", "open-culture", "audio"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "The current project focuses on English-language read-alongs, but the literacy need is global and many PD/CC texts exist in non-English languages. Expanding to multilingual read-alongs overlaps with sibling projects (open-pronunciation-audio, decodable-readers, public-domain-translations). Before starting multilingual production, a structured assessment is needed to understand the scope, the aligner and reviewer requirements per language, the overlap with sibling projects, and whether this should be a separate project or an extension of read-aloud-audio.",
+  "objective": "Assess the feasibility and scope of multilingual read-alongs, identify overlap with sibling Elyos projects, and recommend whether to extend read-aloud-audio or spin a sibling project.",
+  "acceptanceCriteria": [
+    "Surveys candidate languages and source collections (e.g. Wikisource multilingual, OpenStax translations, CC children's books in target languages) with a prioritized short-list of 2–3 languages.",
+    "Identifies forced-aligner support and accuracy expectations for each candidate language (not all aligners support all languages equally).",
+    "Identifies reviewer-skill requirements for pronunciation QA in each candidate language.",
+    "Documents overlap with sibling projects (open-pronunciation-audio, decodable-readers, public-domain-translations) and proposes clear scope boundaries.",
+    "Recommends: extend read-aloud-audio with a language parameter, or launch a sibling project — with rationale.",
+    "Published as CC-BY-4.0."
+  ],
+  "resources": [
+    "PLAN.md (non-goal: multilingual in default flow; open question on sibling projects)",
+    "Wikisource multilingual text collections",
+    "Montreal Forced Aligner language model coverage",
+    "WhisperX multilingual support documentation",
+    "Elyos portfolio: open-pronunciation-audio, decodable-readers, public-domain-translations projects"
+  ],
+  "output": "A multilingual feasibility report (docs/multilingual-assessment.md), CC-BY-4.0, covering candidate languages, aligner support, reviewer requirements, sibling-project overlap, and a recommendation with rationale.",
+  "requestor": "jdev1977",
+  "verifiedNeed": true,
+  "outputLicense": "CC-BY-4.0"
+}

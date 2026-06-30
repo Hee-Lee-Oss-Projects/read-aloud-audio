@@ -1,0 +1,35 @@
+{
+  "id": "read-aloud-audio-doc-002",
+  "title": "Pronunciation specialist guide (foreign-language / names / archaic terms)",
+  "project": "read-aloud-audio",
+  "type": "writing",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["literacy", "accessibility", "open-culture", "audio"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "The narration & pronunciation style guide (style-001) defines what to flag for pronunciation review, but a specialist reviewer needs detailed guidance on how to evaluate and transcribe foreign-language passages, proper names from non-English traditions, and archaic terms. A mispronounced word actively miseducates a literacy learner. The specialist guide extends style-001 for the pronunciation reviewer role, which requires language skill beyond the general QA pool. Depends on style-001.",
+  "objective": "Write and publish a specialist guide for pronunciation reviewers covering evaluation of foreign-language passages, non-English proper names, and archaic terms, with IPA transcription conventions and worked examples.",
+  "acceptanceCriteria": [
+    "Defines the credential bar and skill requirements for a pronunciation reviewer per language type (e.g. native speaker, linguist, or documented proficiency).",
+    "Provides guidance for foreign-language passages: how to source authoritative IPA transcriptions, how to evaluate a narrator's rendering, and how to document corrections in the pronunciation lexicon.",
+    "Provides guidance for non-English proper names (place names, personal names, historical figures): authoritative reference sources per language family and how to handle anglicized vs. native-language pronunciations.",
+    "Provides guidance for archaic English and technical terms: reference sources, IPA transcription conventions, and when anglicization is acceptable vs. when the period or original pronunciation is preferred for a literacy context.",
+    "Includes ≥3 worked examples covering at least one foreign-language passage, one non-English name, and one archaic term.",
+    "Is published, versioned, and licensed CC-BY-4.0."
+  ],
+  "resources": [
+    "read-aloud-audio-style-001 (narration & pronunciation style guide, lexicon conventions)",
+    "read-aloud-audio-doc-001 (reviewer workflow + QA rubric, pronunciation axis)",
+    "PLAN.md (medium risk tier for pronunciation-critical content)",
+    "IPA Chart (International Phonetic Association)",
+    "Forvo and other community pronunciation references"
+  ],
+  "output": "A versioned pronunciation specialist guide document (docs/pronunciation-specialist-guide.md), CC-BY-4.0, covering reviewer skill requirements, foreign-language evaluation, proper-name handling, archaic-term conventions, IPA transcription guidance, and worked examples.",
+  "requestor": "jdev1977",
+  "verifiedNeed": true,
+  "outputLicense": "CC-BY-4.0"
+}

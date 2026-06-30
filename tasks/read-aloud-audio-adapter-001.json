@@ -1,0 +1,39 @@
+{
+  "id": "read-aloud-audio-adapter-001",
+  "title": "Forced-alignment adapter (audio↔text → SMIL/WebVTT/JSON)",
+  "project": "read-aloud-audio",
+  "type": "code",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["literacy", "accessibility", "open-culture", "audio", "infrastructure"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "large",
+  "status": "open",
+  "context": "Forced alignment — matching audio to its source text to produce precise word/sentence timing — is the core technical step that turns a narration into a text-aligned read-along. The cold-start narrate-001 task performs this manually; adapter-001 wraps the chosen forced aligner behind a neutral interface so that future batch runs can be automated. The adapter must be evaluatable against the alignment reference set from narrate-001 so accuracy is reproducible over time. It must also flag low-confidence segments for human review rather than silently shipping drift. Depends on data-001 (record schema) and narrate-001 (reference set).",
+  "objective": "Implement the forced-alignment adapter in adapters/align/ that wraps the chosen aligner (e.g. aeneas, Montreal Forced Aligner, or WhisperX) behind a neutral interface and emits EPUB 3 Media Overlays (SMIL), WebVTT, and a JSON sidecar at configurable granularity.",
+  "acceptanceCriteria": [
+    "Wraps the chosen forced aligner behind a neutral TypeScript interface in adapters/align/; the aligner implementation is swappable without changing callers.",
+    "Emits EPUB 3 Media Overlays (SMIL), WebVTT, and a JSON sidecar for each input audio+text pair at configurable granularity (word-level and/or sentence-level).",
+    "Measures onset/offset error against the alignment reference set from narrate-001 and reports median onset error per run.",
+    "Flags low-confidence segments for human alignment review (does not silently pass them); includes a per-segment confidence score or flag in the JSON output.",
+    "Emits a run report: per-file median onset error, count and fraction of segments flagged for human review, and aligner version.",
+    "Passes pnpm build and pnpm test (unit tests covering at least: correct SMIL/WebVTT/JSON structure, low-confidence flagging, error handling for mismatched audio/text lengths); pnpm lint clean.",
+    "Licensed MIT; DCO sign-off on all commits."
+  ],
+  "resources": [
+    "PLAN.md (adapters/align/ component, forced-alignment step)",
+    "read-aloud-audio-data-001 (per-work record alignment fields)",
+    "read-aloud-audio-narrate-001 (alignment reference set)",
+    "EPUB 3 Media Overlays (SMIL) specification",
+    "W3C WebVTT specification",
+    "aeneas forced aligner documentation",
+    "Montreal Forced Aligner documentation",
+    "WhisperX documentation"
+  ],
+  "output": "A merged PR adding adapters/align/ with the forced-alignment adapter implementation, unit tests, and documentation covering the neutral interface, output formats, confidence-flag semantics, and how to run against the reference set.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

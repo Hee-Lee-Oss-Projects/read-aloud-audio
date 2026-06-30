@@ -1,0 +1,33 @@
+{
+  "id": "read-aloud-audio-tts-001",
+  "title": "Gated synthetic-voice adapter (clearly-licensed, talent-consented, labeled)",
+  "project": "read-aloud-audio",
+  "type": "code",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["literacy", "accessibility", "open-culture", "audio", "infrastructure"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "Synthetic narration is a gated, opt-in path: it may be used only with a TTS voice whose underlying talent has consented to synthesis and redistribution, and all output must be labeled AI-synthesized. This adapter wraps the chosen synthetic-voice tool in adapters/tts/ behind a neutral interface, enforces the consent gate, records voice provenance, and ensures the AI-synthesized label is applied. It must never produce an imitation of an identifiable real person. Only enabled when the synthetic path is confirmed in scope.",
+  "objective": "Implement the gated synthetic-voice adapter in adapters/tts/ that wraps a clearly-licensed TTS voice, enforces the consent and provenance gate, and ensures all output is labeled AI-synthesized.",
+  "acceptanceCriteria": [
+    "Wraps a TTS voice model that is clearly licensed for redistribution of generated audio and whose underlying voice talent has documented consent to synthesis and redistribution.",
+    "Enforces the consent gate: refuses to render without a valid synthetic-provenance record (model, version, voice id, license, talent-consent attestation).",
+    "Applies the AI-synthesized label to all output audio and records the full synthetic-provenance record in the per-work data-001 record.",
+    "Explicitly refuses to render a voice described as an imitation or clone of an identifiable real person; emits a clear refusal reason.",
+    "Passes pnpm build and pnpm test (unit tests covering: consent-gate enforcement, label application, provenance record structure, refusal of identifiable-person imitation); pnpm lint clean.",
+    "Licensed MIT; DCO sign-off on all commits."
+  ],
+  "resources": [
+    "PLAN.md (synthetic narration gated path, adapters/tts/ component, synthetic-voice scope)",
+    "read-aloud-audio-data-001 (per-work record voiceProvenance field)",
+    "read-aloud-audio-data-002 (synthetic-narration provenance record format)"
+  ],
+  "output": "A merged PR adding adapters/tts/ with the synthetic-voice adapter implementation, unit tests, and documentation covering the supported voice model, consent-gate enforcement, labeling, provenance record fields, and the identifiable-person refusal rule.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}
