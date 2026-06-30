@@ -1,0 +1,35 @@
+{
+  "id": "read-aloud-audio-adapter-003",
+  "title": "Publish adapter for the secured channel (submission/PR/deposit)",
+  "project": "read-aloud-audio",
+  "type": "code",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["literacy", "accessibility", "open-culture", "audio", "infrastructure"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "large",
+  "status": "open",
+  "context": "Publishing a completed read-along upstream to the confirmed distribution channel is the last step before a deed is 'done'. The publish adapter must submit the package (EPUB 3 with Media Overlays, open audio, WebVTT, transcript, metadata) via the channel's preferred mechanism (repo PR, API deposit, or archive upload), honor the channel's rate limits and bot/contribution policies, record the upstream reference in the per-work record, and never overwrite a pre-existing better version. The specific implementation depends on the channel confirmed by research-001. Depends on research-001 (channel and required format/license) and data-001 (per-work record schema).",
+  "objective": "Implement the first publish adapter in adapters/publish-<channel>/ for the distribution channel confirmed by research-001, enabling automated or semi-automated submission of completed read-along packages with full license, attribution, consent reference, provenance, and human/synthetic label.",
+  "acceptanceCriteria": [
+    "Implements a publish adapter behind the neutral adapters/publish interface for the channel confirmed by research-001 (adapter name includes the channel identifier).",
+    "Submits the full read-along package: EPUB 3 with Media Overlays, open audio files (Opus + MP3), WebVTT, plain-text transcript, and a metadata/credits payload carrying license, attribution, speaker-consent reference, provenance, and human/synthetic label.",
+    "Verifies that no pre-existing better version exists at the channel before submitting; skips and logs rather than clobbering.",
+    "Honors the channel's rate limits, API terms, and bot/contribution policies.",
+    "Records the upstream reference (PR url, deposit id, or archive url) in the per-work record's upstreamRef field and updates publishStatus to 'submitted'.",
+    "Never writes API tokens, secrets, or PII into logs, receipts, records, or committed files (per CLAUDE.md); tokens are supplied via the human operator's environment.",
+    "Passes pnpm build and pnpm test (unit tests covering: package assembly, skip-existing check, upstreamRef update, secrets-not-logged assertion); pnpm lint clean.",
+    "Licensed MIT; DCO sign-off on all commits."
+  ],
+  "resources": [
+    "read-aloud-audio-research-001 (confirmed channel, required output format, license, pre-engagement exit artifact)",
+    "read-aloud-audio-data-001 (per-work record schema: upstreamRef, publishStatus fields)",
+    "PLAN.md (publish upstream step, adapters/publish-*/ component, secrets handling)"
+  ],
+  "output": "A merged PR adding adapters/publish-<channel>/ with the publish adapter implementation, unit tests, and documentation covering the channel-specific submission mechanism, package assembly, existing-version check, secrets handling, and how to update the per-work record.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

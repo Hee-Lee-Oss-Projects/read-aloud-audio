@@ -1,0 +1,33 @@
+{
+  "id": "read-aloud-audio-data-002",
+  "title": "Define speaker-consent & voice-provenance record format (human + synthetic)",
+  "project": "read-aloud-audio",
+  "type": "design-spec",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["literacy", "accessibility", "open-culture", "audio", "rights"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "A human voice is personal (biometric-adjacent) data; synthetic narration can be a deepfake vector. Before any narration recording is accepted, a signed speaker-consent and voice-provenance record must be on file. Without a stable, versioned format for this record, the narration coordinator cannot operate the consent gate, withdrawals cannot be honored, and the pipeline cannot block publication of unconsented or mislabeled audio. This spec must be finalized before narrate-001 begins and covers both human and synthetic narration paths.",
+  "objective": "Design and publish v1 of the speaker-consent and voice-provenance record format covering both the human-narration consent record and the synthetic-voice provenance record, with secure-storage guidance and withdrawal/takedown procedure.",
+  "acceptanceCriteria": [
+    "Human-narration consent record captures: speaker name or chosen pseudonym, consent to record and redistribute under the named open license, explicit AI-processing-for-alignment-and-QA-only clause (no training, no cloning), age confirmation or documented guardian-consent process, and a documented right to withdraw with a takedown/disposition procedure.",
+    "Synthetic-narration provenance record captures: TTS model name, version, voice id, voice license (clearly licensed for redistribution of generated audio), and a talent-consent-to-synthesis-and-redistribution attestation; output is marked AI-synthesized.",
+    "Forbids any record describing a clone or imitation of an identifiable real person.",
+    "Specifies secure storage and reference-only handling: no raw PII is inlined in public records, logs, or committed files; the work record holds a reference (speakerRef) only.",
+    "Defines the withdrawal and disposition procedure: how a narrator triggers takedown, how the provenance log records final disposition, and what happens to in-flight submissions.",
+    "Published as a versioned spec document (CC-BY-4.0); reviewers: Maintainer + Narration coordinator."
+  ],
+  "resources": [
+    "PLAN.md (voice / speaker rights & consent gate, privacy / PII stance, security & privacy sections)",
+    "TASKS.md (read-aloud-audio-data-002 acceptance criteria)",
+    "read-aloud-audio-data-001 (per-work record schema, speakerRef field)"
+  ],
+  "output": "A versioned consent and voice-provenance spec document (consent/consent-provenance-spec.md), CC-BY-4.0, defining the human consent record fields, the synthetic provenance record fields, secure-storage guidance, PII-minimization rules, and the withdrawal/takedown procedure.",
+  "requestor": "jdev1977",
+  "verifiedNeed": true,
+  "outputLicense": "CC-BY-4.0"
+}

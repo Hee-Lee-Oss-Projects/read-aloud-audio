@@ -1,0 +1,34 @@
+{
+  "id": "read-aloud-audio-adapter-002",
+  "title": "Audio-mastering adapter (loudness/peak/noise; FLAC→Opus/MP3)",
+  "project": "read-aloud-audio",
+  "type": "code",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["literacy", "accessibility", "open-culture", "audio", "infrastructure"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "Donated home recordings arrive with inconsistent loudness, potential clipping, and varying noise floors. The audio-mastering adapter normalizes audio to the spec's loudness target, enforces the true-peak ceiling, checks the noise floor, rejects clipped audio, retains the lossless FLAC master, and derives Opus and MP3 distribution files. It also emits a per-file quality report so downstream reviewers can see objective measurements before spending time on human QA. Depends on spec-001 (audio-quality spec) for its target values.",
+  "objective": "Implement the audio-mastering adapter in adapters/audio/ that wraps ffmpeg and loudness-measurement tooling to normalize, check, and derive audio files per the audio-quality spec, emitting a per-file quality report.",
+  "acceptanceCriteria": [
+    "Normalizes audio to the integrated-loudness target specified in spec-001 (EBU R128 / ITU-R BS.1770), enforces true-peak ≤ -1 dBTP, and checks that the noise floor is within the spec threshold.",
+    "Rejects (does not silently pass) audio that contains clipping; emits a clear rejection reason in the quality report.",
+    "Retains the lossless FLAC master and derives Opus and MP3 at the specified bitrates.",
+    "Emits a per-file quality report containing: integrated LUFS, true-peak dBTP, noise floor dBFS, duration, clipping flag, and pass/fail status against the spec.",
+    "Passes pnpm build and pnpm test (unit tests covering: correct report fields, rejection of clipped audio, loudness normalization within tolerance, format derivation); pnpm lint clean.",
+    "Licensed MIT; DCO sign-off on all commits."
+  ],
+  "resources": [
+    "read-aloud-audio-spec-001 (audio-quality spec: LUFS target, true-peak ceiling, noise floor, formats)",
+    "PLAN.md (adapters/audio/ component, audio-mastering step)",
+    "ffmpeg loudness normalization (loudnorm filter) documentation",
+    "EBU R128 / ITU-R BS.1770 specification"
+  ],
+  "output": "A merged PR adding adapters/audio/ with the audio-mastering adapter implementation, unit tests, and documentation covering input requirements, output format paths, the quality report fields, and clipping-rejection behavior.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

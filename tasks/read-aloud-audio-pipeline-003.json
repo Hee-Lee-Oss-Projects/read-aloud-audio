@@ -1,0 +1,32 @@
+{
+  "id": "read-aloud-audio-pipeline-003",
+  "title": "Outcome-tracking dashboard (published/live, accuracy, completeness)",
+  "project": "read-aloud-audio",
+  "type": "code",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["literacy", "accessibility", "open-culture", "audio", "infrastructure"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "As the project scales past M2, a lightweight dashboard that tracks published-live counts, alignment accuracy, pronunciation error rate, and consent/rights completeness over time is needed to maintain sustainability and catch quality regressions. The dashboard consumes the quality-metrics dataset (data-003) and per-work records. It is a backlog item that becomes useful once meaningful batch data exists.",
+  "objective": "Implement a lightweight outcome-tracking dashboard (or report generator) that reads the quality-metrics dataset and per-work records to surface published-live counts, alignment accuracy trends, and consent/rights completeness per work/collection and run.",
+  "acceptanceCriteria": [
+    "Reads the quality-metrics dataset (data-003) and per-work records to compute and display: total chapters published and live, acceptance rate per run, median alignment error per run, pronunciation error rate per run, audio-quality conformance rate per run, consent completeness (%), and rights completeness (%).",
+    "Outputs a human-readable summary (Markdown or HTML) and a machine-readable JSON summary per run.",
+    "Detects and highlights regressions: any metric that deteriorates by more than a configurable threshold vs. the previous run is flagged.",
+    "Passes pnpm build and pnpm test; pnpm lint clean.",
+    "Licensed MIT; DCO sign-off on all commits."
+  ],
+  "resources": [
+    "read-aloud-audio-data-003 (quality-metrics dataset and schema)",
+    "read-aloud-audio-data-001 (per-work record schema)",
+    "PLAN.md (success metrics table, outcome-tracking dashboard, sustainability section)"
+  ],
+  "output": "A merged PR adding pipeline/dashboard/ with the outcome-tracking dashboard or report generator, unit tests, and documentation covering the input data format, output summary format, and regression-flag thresholds.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

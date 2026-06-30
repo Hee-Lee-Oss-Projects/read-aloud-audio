@@ -1,0 +1,36 @@
+{
+  "id": "read-aloud-audio-research-002",
+  "title": "Validate per-jurisdiction PD/license rules for target sources",
+  "project": "read-aloud-audio",
+  "type": "research",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["literacy", "accessibility", "open-culture", "audio", "rights"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "Public-domain status must be verified per jurisdiction, not assumed globally. A text that is PD in the US may still be under copyright in other countries (life-of-author+70 elsewhere), making a US-PD-only designation insufficient if the project publishes to an international channel. The pipeline's rights-verification gate must enforce per-jurisdiction checks, and the narration team must know which source collections and jurisdictions are safe before any narration begins. Translations and introductions have their own independent rights and must be checked separately.",
+  "objective": "Research and document the public-domain cutoff rules and open-license acceptance criteria for the key source collections (Project Gutenberg, Standard Ebooks, Wikisource, OpenStax) across the jurisdictions most relevant to the chosen distribution channel, so the pipeline's rights gate can be implemented correctly.",
+  "acceptanceCriteria": [
+    "Documents the PD cutoff rule for each target jurisdiction (e.g. US: published before 1928 or other criteria; EU/UK/AU: life-of-author+70; Canada: life+50) and how it applies to each source collection.",
+    "Identifies which source collections already perform per-jurisdiction rights verification and what their stated scope covers (e.g. Project Gutenberg's US-only PD stance).",
+    "Defines the rule for translations and introductions: they are rights-checked independently; a PD text with a copyrighted modern translation or introduction must use only the PD edition.",
+    "Documents how open-license texts (CC0, CC-BY, CC-BY-SA, CC-BY-NC) are handled and where CC-BY-NC requires flagging for review.",
+    "Produces a rights-lookup reference table (source collection × jurisdiction → rule and exclusion criteria) that the pipeline-001 implementation can encode.",
+    "States the 'unknown / PD-US-only without scoping / ambiguous → excluded' rule explicitly with worked examples."
+  ],
+  "resources": [
+    "PLAN.md (data, licensing & compliance section; hard source-rights gate)",
+    "read-aloud-audio-data-001 (per-work rights-verification record format)",
+    "Project Gutenberg terms and PD scope documentation",
+    "Standard Ebooks legal and licensing notes",
+    "Wikisource copyright policy",
+    "Creative Commons license suite documentation"
+  ],
+  "output": "A per-jurisdiction rights reference document (docs/rights-verification-reference.md), CC-BY-4.0, with a rights-lookup table (source collection × jurisdiction), the exclusion rule for ambiguous PD claims, translation/introduction handling, and open-license acceptance criteria for use by the pipeline-001 implementation.",
+  "requestor": "jdev1977",
+  "verifiedNeed": true,
+  "outputLicense": "CC-BY-4.0"
+}

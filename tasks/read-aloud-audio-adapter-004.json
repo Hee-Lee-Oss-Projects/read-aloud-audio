@@ -1,0 +1,33 @@
+{
+  "id": "read-aloud-audio-adapter-004",
+  "title": "Additional distribution-channel adapter (2nd host)",
+  "project": "read-aloud-audio",
+  "type": "code",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["literacy", "accessibility", "open-culture", "audio", "infrastructure"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "large",
+  "status": "open",
+  "context": "After the first publish adapter (adapter-003) is operational, a second distribution channel adapter reduces single-channel dependency and broadens the reach of published read-alongs. This requires a second partner to be secured (per research-001's decision tree) and their format, license, and AI-audio stance to be confirmed. This is a backlog item that becomes actionable only after M1 is complete and a second channel is secured.",
+  "objective": "Implement a second publish adapter in adapters/publish-<channel2>/ for a newly confirmed distribution channel, following the same neutral adapter interface as adapter-003.",
+  "acceptanceCriteria": [
+    "Implements a publish adapter for a second confirmed distribution channel behind the same neutral adapters/publish interface used by adapter-003.",
+    "Submits the full read-along package with license, attribution, consent reference, provenance, and human/synthetic label per the second channel's requirements.",
+    "Documents the second channel's acceptance posture, format requirements, AI-audio stance, and required output license.",
+    "Honors the second channel's rate limits and API/contribution policies; never writes secrets to logs or committed files.",
+    "Passes pnpm build and pnpm test; pnpm lint clean.",
+    "Licensed MIT; DCO sign-off on all commits."
+  ],
+  "resources": [
+    "read-aloud-audio-adapter-003 (first publish adapter, neutral interface reference)",
+    "read-aloud-audio-research-001 (decision tree for candidate channels)",
+    "PLAN.md (candidate upstream channels, adapters/publish-*/ component)"
+  ],
+  "output": "A merged PR adding adapters/publish-<channel2>/ with the second-channel publish adapter implementation, unit tests, and documentation covering the channel-specific mechanism, package requirements, and secrets handling.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

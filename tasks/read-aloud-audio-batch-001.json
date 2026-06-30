@@ -1,0 +1,37 @@
+{
+  "id": "read-aloud-audio-batch-001",
+  "title": "Produce + publish ~10 chapters (first repeatable run)",
+  "project": "read-aloud-audio",
+  "type": "data",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["literacy", "accessibility", "open-culture", "audio"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "large",
+  "status": "open",
+  "context": "After the M1 pipeline adapters are operational, this task validates that the entire pipeline is repeatable and policy-compliant at a modest scale of ~10 chapters. It exercises the rights gate, consent gate, segmentation, pronunciation lexicon, audio mastering, forced alignment, human QA rotation, and publish adapter end-to-end. Every item must pass all gates and carry the human/synthetic label. The acceptance rate and median alignment error are measured to establish pipeline maturity before scaling further. Depends on adapter-001, adapter-002, adapter-003, pipeline-001, pipeline-002, and doc-001.",
+  "objective": "Run the M1 pipeline end-to-end to produce and publish approximately 10 chapters across ≥1 work/collection, measuring acceptance rate and alignment accuracy to validate pipeline maturity.",
+  "acceptanceCriteria": [
+    "≥10 chapters are published upstream at the confirmed channel, live and playable, within 1–2 works/collections.",
+    "Every chapter passed in sequence: rights gate → consent gate → pronunciation-lexicon review → audio-quality check → fidelity/pronunciation/audio/alignment QA → publish adapter.",
+    "Every published chapter carries the correct human/synthetic label, license, attribution, speaker-consent reference, and provenance.",
+    "The acceptance rate (published ÷ submitted) is measured and recorded.",
+    "The median sentence/word onset alignment error is measured against the narrate-001 reference set and recorded.",
+    "Zero rights, consent, or labeling violations."
+  ],
+  "resources": [
+    "read-aloud-audio-adapter-001 (alignment adapter)",
+    "read-aloud-audio-adapter-002 (audio-mastering adapter)",
+    "read-aloud-audio-adapter-003 (publish adapter)",
+    "read-aloud-audio-pipeline-001 (rights + consent gate)",
+    "read-aloud-audio-pipeline-002 (segmentation + lexicon tooling)",
+    "read-aloud-audio-doc-001 (reviewer workflow + QA rubric)",
+    "PLAN.md (M1 exit criteria)"
+  ],
+  "output": "≥10 chapters published at the confirmed upstream channel (live URLs / PR / deposit references), updated per-work records for each chapter, a batch-001 run report recording acceptance rate, median alignment error, and any gate rejections.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

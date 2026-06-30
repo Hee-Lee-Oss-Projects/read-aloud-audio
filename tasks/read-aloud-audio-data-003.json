@@ -1,0 +1,31 @@
+{
+  "id": "read-aloud-audio-data-003",
+  "title": "Quality metrics dataset (acceptance, alignment error, pronunciation rate, consent/rights completeness)",
+  "project": "read-aloud-audio",
+  "type": "data",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["literacy", "accessibility", "open-culture", "audio"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "dataset",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "After batch-001 and batch-002 produce measurable output, the project needs a structured dataset of quality metrics — acceptance rate, median alignment error, pronunciation error rate, audio-quality conformance, and consent/rights completeness per chapter/work — to track pipeline health over time and inform the outcome-tracking dashboard (pipeline-003). Without a stable metrics format, runs are not comparable and the project cannot demonstrate whether quality is improving or degrading. Depends on batch-001 (first run producing measurable data).",
+  "objective": "Define and populate a quality-metrics dataset schema covering all key pipeline metrics per chapter and per run, populated from the batch-001 and batch-002 run reports.",
+  "acceptanceCriteria": [
+    "Defines a quality-metrics schema with fields: work/chapter id, run id, date, acceptance rate, median sentence/word onset error (ms), pronunciation error rate (per 1,000 words), audio-quality conformance rate (%), fidelity defect count, consent completeness (%), rights completeness (%), and synthetic-label completeness (%).",
+    "Populates the dataset from the batch-001 and batch-002 run reports with at least one entry per batch run.",
+    "Schema and dataset are published under CC0-1.0.",
+    "The dataset format is machine-readable (JSON or CSV with a schema file) and suitable for ingestion by a future outcome-tracking dashboard (pipeline-003)."
+  ],
+  "resources": [
+    "read-aloud-audio-batch-001 (run report with acceptance rate, alignment error)",
+    "read-aloud-audio-batch-002 (run report with quality bars)",
+    "PLAN.md (success metrics table, M2 exit criteria)"
+  ],
+  "output": "A quality-metrics dataset (metrics/quality-metrics.json or .csv) and its schema definition (metrics/quality-metrics.schema.json), CC0-1.0, populated with run data from batch-001 and batch-002.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

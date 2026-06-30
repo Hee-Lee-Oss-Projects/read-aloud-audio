@@ -1,0 +1,35 @@
+{
+  "id": "read-aloud-audio-spec-001",
+  "title": "Author audio-quality spec v1 (LUFS / true-peak / noise floor / formats)",
+  "project": "read-aloud-audio",
+  "type": "writing",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["literacy", "accessibility", "open-culture", "audio"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "All read-aloud-audio narrations must meet consistent, objective audio quality standards before any human QA or publication. Without a versioned spec that defines concrete targets for integrated loudness (LUFS), true-peak ceiling (dBTP), noise floor, and acceptable output formats/sample rates, each donated recording will arrive with inconsistent levels, and the audio-mastering adapter will have no authoritative target. The spec must be established before narrate-001 and adapter-002 begin.",
+  "objective": "Write and publish version 1 of the audio-quality spec that the audio-mastering adapter and all narrators/reviewers will enforce.",
+  "acceptanceCriteria": [
+    "Specifies the integrated-loudness target (EBU R128 / ITU-R BS.1770) in LUFS, with the spoken-word distribution target and any host-specific variant (e.g. -16 LUFS vs -18/-23 LUFS).",
+    "Specifies the true-peak ceiling (≤ -1 dBTP) and the noise-floor threshold in dBFS or equivalent.",
+    "States that no clipping is acceptable and defines how clipped audio is handled (rejected, not silently passed).",
+    "Specifies the lossless master format (FLAC/WAV), sample rate, bit depth, and the derived distribution formats (Opus + MP3) with their target bitrates.",
+    "States that the audio-mastering adapter must emit a per-file quality report (LUFS, true-peak, noise floor, duration) before human QA.",
+    "Is published, versioned, and licensed CC-BY-4.0."
+  ],
+  "resources": [
+    "PLAN.md (audio-quality bar and audio tooling sections)",
+    "EBU R128 loudness normalization standard",
+    "ITU-R BS.1770 algorithm specification",
+    "ffmpeg loudness normalization documentation",
+    "EPUB 3 accessible-publishing audio guidance"
+  ],
+  "output": "A versioned audio-quality spec document (style-guide/audio-quality-spec.md), CC-BY-4.0, covering integrated-loudness target, true-peak ceiling, noise-floor threshold, clipping policy, lossless master and derived-format requirements, and the required per-file quality report fields.",
+  "requestor": "jdev1977",
+  "verifiedNeed": true,
+  "outputLicense": "CC-BY-4.0"
+}

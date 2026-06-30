@@ -1,0 +1,36 @@
+{
+  "id": "read-aloud-audio-research-001",
+  "title": "Secure ≥1 distribution channel + host stance on AI-assisted/synthetic audio",
+  "project": "read-aloud-audio",
+  "type": "research",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["literacy", "accessibility", "open-culture", "audio"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "No distribution partner has yet been secured for this project. Without at least one confirmed channel willing to host human-reviewed, openly-licensed, consent-backed read-alongs, no narration or publishing work should begin. The channel confirmation is the M0 hard exit gate: if the time-boxed effort finds no willing channel, the project pivots or stops rather than producing audio with nowhere to ship. The channel's required output format and output license must also be confirmed before batch production begins.",
+  "objective": "Identify and confirm ≥1 concrete distribution channel that will accept the project's read-alongs; document each candidate channel's acceptance posture, stance on AI-assisted alignment and AI-synthesized narration, required output license, and an agreed volume ramp; produce a pre-engagement exit artifact.",
+  "acceptanceCriteria": [
+    "Evaluates candidate channels in priority order per PLAN's decision tree: (1) open publisher/open repo, (2) open-audiobook host / Internet Archive, (3) Wikisource / Wikimedia Commons, (4) named literacy/education partner — with each channel's acceptance posture, format requirements, and AI-audio stance documented.",
+    "Identifies ≥1 concrete channel confirmed to accept human-reviewed, openly-licensed, consent-backed read-alongs in EPUB 3 Media Overlays + open audio.",
+    "Documents the confirmed channel's explicit stance on AI-assisted alignment (forced aligner) and on AI-synthesized narration.",
+    "Produces a pre-engagement exit artifact: a statement of intent to the channel, confirmation that the format and cadence are welcome, and an agreed volume ramp.",
+    "Records the channel's required output license and attribution/credit format.",
+    "States the time-box for this task and the kill/pivot criteria if no channel is secured within it.",
+    "On success, identifies which delivery-dependent tasks should have verifiedNeed flipped to true (narrate-001, pr-001, batch-001, batch-002, adapter-003, etc.)."
+  ],
+  "resources": [
+    "PLAN.md (candidate upstream channels, decision tree, partner gap, kill/pivot criteria)",
+    "LibriVox contribution guidelines",
+    "Internet Archive upload and open-content policies",
+    "Standard Ebooks contribution guidelines",
+    "Wikisource community policies on audio and AI-assisted content"
+  ],
+  "output": "A channel-research report document (docs/channel-research.md), CC-BY-4.0, covering evaluation of each candidate channel, the confirmed channel (or kill/pivot outcome), the pre-engagement exit artifact, the required output license, and a list of tasks whose verifiedNeed should be updated on success.",
+  "requestor": "jdev1977",
+  "verifiedNeed": true,
+  "outputLicense": "CC-BY-4.0"
+}

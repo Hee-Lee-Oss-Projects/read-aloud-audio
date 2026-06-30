@@ -1,0 +1,34 @@
+{
+  "id": "read-aloud-audio-pipeline-002",
+  "title": "Text segmentation + pronunciation-lexicon tooling",
+  "project": "read-aloud-audio",
+  "type": "code",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["literacy", "accessibility", "open-culture", "audio", "infrastructure"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "large",
+  "status": "open",
+  "context": "Before a chapter can be aligned, the source text must be normalized, segmented into paragraphs and sentences (and optionally words for word-level highlighting), and have its structure preserved (headings, chapters, verse lines, dialogue). Proper nouns, foreign words, archaic spellings, and technical terms must be flagged in a pronunciation lexicon so that they are routed to a skilled reviewer before narration proceeds. This tooling gates alignment quality and learner accuracy for literacy practice. Depends on style-001 (narration style guide defining structure handling and lexicon conventions) and data-001 (per-work record schema).",
+  "objective": "Implement text-segmentation and pronunciation-lexicon tooling in pipeline/ that normalizes and segments source-text input, preserves document structure, and builds a flagged pronunciation-lexicon per work ready for review.",
+  "acceptanceCriteria": [
+    "Normalizes input text from supported source formats (plain text and basic HTML/XML) and segments it into paragraphs and sentences, with optional word-level tokenization.",
+    "Preserves document structure: headings, chapter boundaries, verse lines, and dialogue markers are retained and emitted in the segment output.",
+    "Automatically flags candidate lexicon items for pronunciation review: proper nouns (capitalized tokens in mid-sentence), hyphenated or archaic forms, words matching a foreign-language pattern or technical-term list, and tokens flagged by a configurable rule.",
+    "Produces a pronunciation-lexicon file per work in the format defined by data-001 (term, IPA/respelling placeholder, reviewedBy); flags items as needs-review until a reviewer clears them.",
+    "Integrates with the per-work record schema (data-001) to write the pronunciationLexicon array and segment metadata.",
+    "Passes pnpm build and pnpm test (unit tests covering: paragraph/sentence segmentation, structure preservation, proper-noun flagging, lexicon output format); pnpm lint clean.",
+    "Licensed MIT; DCO sign-off on all commits."
+  ],
+  "resources": [
+    "read-aloud-audio-style-001 (narration style guide: structure handling, lexicon conventions, item classes to flag)",
+    "read-aloud-audio-data-001 (per-work record schema: pronunciationLexicon field)",
+    "PLAN.md (prepare & segment text step, pronunciation lexicon component)"
+  ],
+  "output": "A merged PR adding pipeline/segment-and-lexicon/ with the text-segmentation and pronunciation-lexicon tooling, unit tests, and documentation covering supported input formats, structure-preservation rules, flagging heuristics, and the lexicon output format.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}
