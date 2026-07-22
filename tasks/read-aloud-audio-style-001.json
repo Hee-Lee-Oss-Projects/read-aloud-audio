@@ -21,8 +21,8 @@
     "Is published, versioned, and licensed CC-BY-4.0."
   ],
   "resources": [
-    "C:\\code\\elyos\\planning\\projects\\read-aloud-audio\\PLAN.md",
-    "C:\\code\\elyos\\governance\\proposals\\read-aloud-audio.md",
+    "C:\\code\\hee-lee-oss\\planning\\projects\\read-aloud-audio\\PLAN.md",
+    "C:\\code\\hee-lee-oss\\governance\\proposals\\read-aloud-audio.md",
     "EPUB 3 Media Overlays (SMIL) specification",
     "W3C WebVTT specification",
     "DAISY / accessible-publishing read-along guidance"

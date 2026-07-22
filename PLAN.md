@@ -169,7 +169,7 @@ and a partner, and measures a real baseline — inventing them now would be dish
 
 This is a **content/data + media-pipeline** project with supporting **adapter code**, run in the
 **donated lane**: a human runs their own agent interactively to do text prep, alignment QA, and
-packaging, and (for human narration) records or coordinates the voice; Elyos prepares the per-work
+packaging, and (for human narration) records or coordinates the voice; Hee-Lee Oss prepares the per-work
 task workspace and opens the upstream submission/PR. **The CLI never invokes or authenticates an
 agent and never runs headless** (per CLAUDE.md). Audio-tool invocation (ffmpeg, forced aligner, TTS)
 is the human operator's local action, wrapped by `adapters/`.
@@ -220,7 +220,7 @@ is the human operator's local action, wrapped by `adapters/`.
 - `pipeline/` — source selection, **per-jurisdiction rights verification**, text segmentation,
   pronunciation-lexicon tooling, alignment runner, audio-mastering runner, and the per-work record
   schema.
-- `adapters/` (Elyos-conformant — all tool/host-specific logic lives here):
+- `adapters/` (Hee-Lee Oss-conformant — all tool/host-specific logic lives here):
   - `adapters/align/` — wrap the forced aligner (e.g. aeneas / Montreal Forced Aligner / WhisperX)
     behind a neutral interface; emit SMIL/WebVTT/JSON.
   - `adapters/audio/` — wrap ffmpeg / loudness tooling for mastering and format derivation.
@@ -313,7 +313,7 @@ narrator's *voice*.**
 source and host**: PD source → CC0 / Public Domain dedication for the new recording where the
 narrator consents, or CC-BY with speaker attribution; CC-BY / CC-BY-SA source → matching CC license.
 The *new recording* carries its own copyright that the narrator licenses openly via the consent
-record. Adapter/pipeline **code is MIT**. We never impose an Elyos license on upstream content or
+record. Adapter/pipeline **code is MIT**. We never impose a Hee-Lee Oss license on upstream content or
 strip a source's required attribution/share-alike terms.
 
 **Privacy / PII stance.** A human voice is personal (biometric-adjacent) data. We: collect the
@@ -486,7 +486,7 @@ a milestone-scoped, channel-confirmed batch.
   welcome, and an agreed volume ramp.
 - **Standards** — EPUB 3 Media Overlays (SMIL), WebVTT, EBU R128, ITU-R BS.1770, WCAG / accessible
   publishing (DAISY) guidance for read-along.
-- **Elyos platform pieces** — `packages/cli` (task workspace + PR/submission prep, donated lane), the
+- **Hee-Lee Oss platform pieces** — `packages/cli` (task workspace + PR/submission prep, donated lane), the
   Task schema (`packages/schema`), and `adapters/` for all tool/host-specific code. The CLI never
   runs an agent headless and never authenticates a coding agent.
 
@@ -516,20 +516,20 @@ a milestone-scoped, channel-confirmed batch.
   PRs, archive deposits).
 - **Secrets handling.** Any host/API tokens are supplied via the human operator's own environment,
   never written into logs, receipts, records, or committed files (per CLAUDE.md). Donated lane: the
-  human authenticates with their own account; Elyos stores no agent credentials.
+  human authenticates with their own account; Hee-Lee Oss stores no agent credentials.
 - **PII / consent.** Speaker identity is collected minimally; pseudonyms allowed; signed consent
   stored securely and **referenced, never inlined** in public `records/` or logs; recordings are
   **never** used to train/clone models; withdrawal is honored with a documented takedown path.
 - **Abuse / misuse prevention.** No voice cloning or impersonation; synthetic output always labeled;
   no narration of non-open texts; honor host rate limits and policies; every publish is
-  human-reviewed. Refuse and flag (per Elyos guardrails) any request to clone/imitate a real voice,
+  human-reviewed. Refuse and flag (per Hee-Lee Oss guardrails) any request to clone/imitate a real voice,
   to narrate non-open text, to produce deceptive/impersonated audio, or to narrate high-stakes
   instructional content as authoritative without expert review.
 
 ## Sustainability & maintenance
 
 - **Post-delivery ownership.** Read-alongs live upstream in the host collections — once published
-  they are durable and not Elyos-dependent. Lossless masters + alignment sources are retained so a
+  they are durable and not Hee-Lee Oss-dependent. Lossless masters + alignment sources are retained so a
   work can be re-derived to new formats/standards later.
 - **Additive contributions only.** We add missing read-alongs; we do not overwrite better existing
   versions. Conflicts are resolved by re-fetch-and-re-evaluate, never clobbering host content.
@@ -565,11 +565,11 @@ a milestone-scoped, channel-confirmed batch.
 
 ## References
 
-- `C:\code\elyos\CLAUDE.md` — Elyos work rules, lanes, quality bar, refusal guardrails.
-- `C:\code\elyos\docs\good-deed-definition.md` — good-deed criteria and risk tiers.
-- `C:\code\elyos\packages\schema\src\schemas.ts` — Task JSON schema.
-- `C:\code\elyos\planning\ROADMAP.md` — portfolio roadmap (read-aloud-audio is a Track 3 candidate).
-- `C:\code\elyos\governance\proposals\read-aloud-audio.md` — originating proposal (TO BE WRITTEN).
+- `C:\code\hee-lee-oss\CLAUDE.md` — Hee-Lee Oss work rules, lanes, quality bar, refusal guardrails.
+- `C:\code\hee-lee-oss\docs\good-deed-definition.md` — good-deed criteria and risk tiers.
+- `C:\code\hee-lee-oss\packages\schema\src\schemas.ts` — Task JSON schema.
+- `C:\code\hee-lee-oss\planning\ROADMAP.md` — portfolio roadmap (read-aloud-audio is a Track 3 candidate).
+- `C:\code\hee-lee-oss\governance\proposals\read-aloud-audio.md` — originating proposal (TO BE WRITTEN).
 - EPUB 3 Media Overlays (SMIL) specification — synchronized text & audio read-along.
 - W3C WebVTT — Web Video Text Tracks (timed text / cue timing).
 - EBU R128 / ITU-R BS.1770 — loudness normalization for spoken-word audio.
@@ -615,7 +615,7 @@ Twenty-five specific improvements identified against the first draft and **appli
 13. **Channel decision tree + kill/pivot.** Borrowed and adapted the exemplar's decision tree so
     production is gated on a confirmed channel and the project stops rather than over-produces.
 14. **`verifiedNeed=false` until a channel is secured.** Made the honesty stance explicit and tied
-    it to delivery-dependent tasks, matching Elyos house practice.
+    it to delivery-dependent tasks, matching Hee-Lee Oss house practice.
 15. **Open-formats-only key decision.** Pinned EPUB 3 Media Overlays + WebVTT + FLAC/Opus/MP3 to
     avoid proprietary lock-in and ensure durability.
 16. **Lossless master retention for re-derivation.** Added FLAC/WAV master retention so works can be
@@ -662,7 +662,7 @@ tables, acceptance criteria, DoD, example Task JSON).
   channel-independent artifacts (style guide, specs). ✔
 
 **Correctness fixes applied during review.**
-- Confirmed Elyos donated-lane rule: clarified that the CLI never runs an agent headless and that
+- Confirmed Hee-Lee Oss donated-lane rule: clarified that the CLI never runs an agent headless and that
   ffmpeg/aligner/TTS invocation is the human operator's local action wrapped by `adapters/`.
 - Ensured no funded tasks appear (so `fundedBudgetUsd` is correctly omitted); noted where the schema
   would require it if a funded task were added.

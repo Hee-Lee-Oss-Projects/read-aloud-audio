@@ -23,8 +23,8 @@
   ],
   "resources": [
     "PLAN.md (high-stakes instructional text escalation, risk-tier high, quality review & risk gates section)",
-    "CLAUDE.md (Elyos refusal guardrails: high-stakes advice without risk-tier expert review)",
-    "Elyos good-deed-definition.md (risk tiers and expert sign-off requirements)"
+    "CLAUDE.md (Hee-Lee Oss refusal guardrails: high-stakes advice without risk-tier expert review)",
+    "Hee-Lee Oss good-deed-definition.md (risk tiers and expert sign-off requirements)"
   ],
   "output": "A high-stakes escalation policy document (docs/high-stakes-escalation-policy.md), CC-BY-4.0, defining classification criteria, the expert sign-off process and 'not advice' framing requirement, required sign-offs from a credentialed domain expert and a patient-advocate or end-user representative, and the default decline rule.",
   "requestor": "jdev1977",

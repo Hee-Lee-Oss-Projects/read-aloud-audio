@@ -1,6 +1,6 @@
 # Competitive & Improvement Analysis — `read-aloud-audio`
 
-Analyst review of `PLAN.md` (v0.1.0, 2026-06-28) for the Elyos good-deed project that turns
+Analyst review of `PLAN.md` (v0.1.0, 2026-06-28) for the Hee-Lee Oss good-deed project that turns
 openly-licensed / public-domain texts into **open, text-aligned read-alongs** (audio + EPUB 3 Media
 Overlays + WebVTT/JSON), human or gated-synthetic narration. Web-researched and cited throughout.
 
@@ -174,7 +174,7 @@ is real, fit must be validated" stance is correct.
 - **No copyrighted / unverified source text** ever enters the pipeline regardless of model suggestion.
 
 (The audio itself is produced by a **human narrator or a licensed TTS engine**, never "by Claude" —
-consistent with the Elyos rule that the CLI never invokes/authenticates an agent and never runs
+consistent with the Hee-Lee Oss rule that the CLI never invokes/authenticates an agent and never runs
 headless.)
 
 ---
